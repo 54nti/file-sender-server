@@ -61,7 +61,7 @@ public class Server {
                         JLabel lFilename = new JLabel(filename);
                         lFilename.setFont(new Font("Arial", Font.BOLD, 20));
                         lFilename.setBorder(new EmptyBorder(10, 0, 10, 0));
-
+                        lFilename.setAlignmentX(Component.CENTER_ALIGNMENT);
                         if (getFileExt((filename)).equalsIgnoreCase("txt")) {
                             fileRow.setName(String.valueOf(fileId));
                             fileRow.addMouseListener(getMyMouseListener());
@@ -79,6 +79,7 @@ public class Server {
                             frame.validate();
                         }
                         files.add(new MyFile(fileId, filename, fileContentBytes, getFileExt(filename)));
+                        fileId++;
                     }
                 }
             } catch(IOException error) {
